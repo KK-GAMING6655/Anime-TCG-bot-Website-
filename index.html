@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime TCG — Collect. Trade. Ascend.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- background layers -->
+<div class="bg-void"></div>
+<div class="bg-grain"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="#" class="nav-brand" data-view="home">
+    <span class="brand-mark">TCG</span>
+    <span class="brand-word">Anime<em>TCG</em></span>
+  </a>
+
+  <div class="nav-right">
+    <a class="btn btn-add" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=0&scope=bot%20applications.commands" target="_blank" rel="noopener">
+      <span>Add Bot</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- SLIDE-IN MENU -->
+<div class="menu-scrim" id="menuScrim"></div>
+<nav class="menu-panel" id="menuPanel" aria-hidden="true">
+  <div class="menu-panel-inner">
+    <span class="menu-eyebrow">Menu</span>
+    <a class="menu-link" href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank" rel="noopener">
+      <span class="menu-link-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18.9 5.7A16 16 0 0 0 15 4.4l-.2.4a13 13 0 0 1 3.4 1.3 14.6 14.6 0 0 0-12.4 0A13 13 0 0 1 9.2 4.8L9 4.4a16 16 0 0 0-3.9 1.3C2.6 9.7 1.9 13.6 2.2 17.4a16.1 16.1 0 0 0 4.9 2.5l.8-1.3a10.4 10.4 0 0 1-1.6-.8l.4-.3a11.6 11.6 0 0 0 10.6 0l.4.3a10.4 10.4 0 0 1-1.6.8l.8 1.3a16 16 0 0 0 4.9-2.5c.4-4.4-.7-8.2-2.9-11.7ZM8.7 15.1c-.9 0-1.6-.9-1.6-1.9s.7-1.9 1.6-1.9 1.7.9 1.6 1.9c0 1-.7 1.9-1.6 1.9Zm6.6 0c-.9 0-1.6-.9-1.6-1.9s.7-1.9 1.6-1.9 1.6.9 1.6 1.9-.7 1.9-1.6 1.9Z" fill="currentColor"/></svg>
+      </span>
+      <span class="menu-link-text">
+        <strong>Support</strong>
+        <small>Join the help server</small>
+      </span>
+    </a>
+    <a class="menu-link" href="#" data-view="commands" id="menuCommandsLink">
+      <span class="menu-link-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5 3 12l5 7M16 5l5 7-5 7M13.5 4 10.5 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="menu-link-text">
+        <strong>Commands</strong>
+        <small>All 24 commands</small>
+      </span>
+    </a>
+    <a class="menu-link" href="https://top.gg/bot/YOUR_BOT_ID/vote" target="_blank" rel="noopener">
+      <span class="menu-link-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5 14.7 9l6 .9-4.3 4.2 1 6-5.4-2.8-5.4 2.8 1-6-4.3-4.2 6-.9 2.7-5.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="menu-link-text">
+        <strong>Vote</strong>
+        <small>Support us on top.gg</small>
+      </span>
+    </a>
+  </div>
+</nav>
+
+<main id="mainContent">
+
+  <!-- ============ HOME VIEW ============ -->
+  <section class="view view-home" id="view-home" data-view-panel="home">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Discord Trading Card Bot</span>
+        <h1 class="hero-title">Every pull<br>tells a story.</h1>
+        <p class="hero-sub">Anime TCG turns your server into a living card economy — gacha pulls, trading, a real market, crates, and a leveling system that grows with every card you open.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=0&scope=bot%20applications.commands" target="_blank" rel="noopener">Add to your server</a>
+          <a class="btn btn-ghost" href="#" data-view="commands">View commands</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>6</strong><span>Rarity tiers</span></div>
+          <div><strong>24</strong><span>Commands</span></div>
+          <div><strong>∞</strong><span>Levels to climb</span></div>
+        </div>
+      </div>
+
+      <div class="hero-stage">
+        <div class="holo-card" id="holoCard">
+          <div class="holo-sheen"></div>
+          <div class="holo-rarity">SUPER LEGENDARY</div>
+          <div class="holo-frame">
+            <div class="holo-art"></div>
+            <div class="holo-name">Gear&nbsp;5 — Luffy</div>
+            <div class="holo-row">
+              <span>ID #830495</span>
+              <span>VAL 9200</span>
+            </div>
+          </div>
+          <div class="holo-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RARITY STRIP -->
+    <section class="rarity-strip" aria-label="Rarity tiers">
+      <div class="rarity-chip r-common">Common</div>
+      <div class="rarity-chip r-uncommon">Uncommon</div>
+      <div class="rarity-chip r-rare">Rare</div>
+      <div class="rarity-chip r-epic">Epic</div>
+      <div class="rarity-chip r-legendary">Legendary</div>
+      <div class="rarity-chip r-super">Super&nbsp;Legendary</div>
+    </section>
+
+    <!-- FEATURES / BINDER GRID -->
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">The Binder</span>
+        <h2>Everything your server needs<br>to run a real card economy.</h2>
+      </div>
+
+      <div class="binder-grid">
+
+        <article class="slot reveal r-rare">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m8 12 3 3 5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Gacha Pulls</h3>
+          <p>Pull a single card or up to 20 at once. Bulk pulls sort low-to-high rarity and taper duplicate odds so your binder stays varied.</p>
+        </article>
+
+        <article class="slot reveal r-epic">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Six Rarity Tiers</h3>
+          <p>From Common to Super Legendary, every card carries a real drop weight and a distinct color identity across the whole bot.</p>
+        </article>
+
+        <article class="slot reveal r-legendary">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h10l4 6-9 12L2 9l5-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Trading &amp; Gifting</h3>
+          <p>Trade cards directly with another collector, or gift cards and coins outright — no fees, no friction.</p>
+        </article>
+
+        <article class="slot reveal r-super">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 9.5 13.5 14.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Card Market</h3>
+          <p>List your cards for sale and browse what everyone else is offering — a living marketplace inside your server.</p>
+        </article>
+
+        <article class="slot reveal r-uncommon">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Crates</h3>
+          <p>Coin crates and card crates, given by admins or earned — opened live with an interactive pick-your-crate menu.</p>
+        </article>
+
+        <article class="slot reveal r-rare">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 17V7l6 4 6-4v10M15 17V9l6-2v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Leveling System</h3>
+          <p>Every pull earns XP by rarity. Level up and the bot renders a custom card announcing it — with your avatar baked right in.</p>
+        </article>
+
+        <article class="slot reveal r-epic">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Leaderboards</h3>
+          <p>Balance, collection points, or level — each leaderboard renders as a real image, avatars and all, switchable with a dropdown.</p>
+        </article>
+
+        <article class="slot reveal r-common">
+          <div class="slot-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Full Economy</h3>
+          <p>Daily and beg income, coin toss bets, and a public/private profile toggle to control who can see your stats.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FOOTER CTA -->
+    <section class="footer-cta">
+      <h2>Your server's binder is empty.<br>Let's fix that.</h2>
+      <a class="btn btn-primary btn-lg" href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=0&scope=bot%20applications.commands" target="_blank" rel="noopener">Add Anime TCG</a>
+    </section>
+
+    <footer class="site-footer">
+      <span>Anime TCG</span>
+      <span class="dot">·</span>
+      <a href="https://discord.gg/YOUR_SUPPORT_SERVER" target="_blank" rel="noopener">Support</a>
+      <span class="dot">·</span>
+      <a href="https://top.gg/bot/YOUR_BOT_ID/vote" target="_blank" rel="noopener">Vote</a>
+    </footer>
+
+  </section>
+
+  <!-- ============ COMMANDS VIEW ============ -->
+  <section class="view view-commands" id="view-commands" data-view-panel="commands" hidden>
+
+    <div class="commands-head">
+      <button class="back-btn" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Back</span>
+      </button>
+      <span class="eyebrow">The Full Index</span>
+      <h1>24 commands.<br>One binder.</h1>
+      <p class="commands-sub">Every command Anime TCG understands, grouped the way you'll actually use them.</p>
+    </div>
+
+    <div class="cmd-groups" id="cmdGroups"><!-- injected by script.js --></div>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
